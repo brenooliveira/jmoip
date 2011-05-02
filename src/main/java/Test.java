@@ -27,9 +27,10 @@ public class Test {
 								.comTelefoneCelular("(61)9999-9999")
 								.comEnderecoCobranca(
 										enderecoCobranca()
-												.comLogradouro("Rua Sócrates")
+												.comLogradouro(
+														"Rua dos exemplos")
 												.comNumero("853")
-												.comBairro("Jardim Marajoara")
+												.comBairro("Jardim")
 												.comCep("04671-072")
 												.comCidade("São Paulo")
 												.comEstado("SP")
