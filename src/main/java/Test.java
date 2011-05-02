@@ -1,49 +1,49 @@
-import br.com.moip.client.Boleto;
-import br.com.moip.client.EnderecoCobranca;
-import br.com.moip.client.InstrucaoUnica;
-import br.com.moip.client.Pagador;
-import br.com.moip.client.PagamentoDireto;
-import br.com.moip.client.Valores;
+import static br.com.moip.client.Boleto.boleto;
+import static br.com.moip.client.CartaoCredito.cartaoCredito;
+import static br.com.moip.client.EnderecoCobranca.enderecoCobranca;
+import static br.com.moip.client.InstrucaoUnica.instrucaoUnica;
+import static br.com.moip.client.Pagador.pagador;
+import static br.com.moip.client.PagamentoDireto.pagamentoDireto;
+import static br.com.moip.client.Valores.valores;
 
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.xml.DomDriver;
+import java.util.UUID;
+
+import br.com.moip.client.EnviarInstrucao;
+import br.com.moip.client.send.SandboxMoip;
+import br.com.moip.client.send.SendToMoip;
 
 public class Test {
 
-	/**
-	 * @param args
-	 */
 	public static void main(final String[] args) {
-		Valores valores = new Valores().comValor("12.00");
 
-		Boleto boleto = new Boleto().comDiasParaExpiracao("5");
+		EnviarInstrucao enviarInstrucao = new EnviarInstrucao()
+				.comInstrucaoUnica(instrucaoUnica()
+						.comRazao("Uma motivo pela compra")
+						.comIdProprio(UUID.randomUUID().toString())
+						.com(pagador()
+								.comNome("Breno Oliveira")
+								.comEmail("breno26@gmail.com")
+								.comIdentidade("222.222.222-22")
+								.comTelefoneCelular("(61)9999-9999")
+								.comEnderecoCobranca(
+										enderecoCobranca()
+												.comLogradouro("Rua Sócrates")
+												.comNumero("853")
+												.comBairro("Jardim Marajoara")
+												.comCep("04671-072")
+												.comCidade("São Paulo")
+												.comEstado("SP")
+												.comPais("BRA")
+												.comTelefoneFixo(
+														"(22)2222-2222")))
+						.com(pagamentoDireto().comForma("BoletoBancario"))
+						.com(boleto().comDiasParaExpiracao("5"))
+						.com(valores().comValor("15.00"))
+						.com(cartaoCredito().comNumero("324165156465546546")
+								.comExpiracao("12/12")));
 
-		PagamentoDireto pagamentoDireto = new PagamentoDireto()
-				.comForma("BoletoBancario");
-
-		EnderecoCobranca enderecoCobranca = new EnderecoCobranca()
-				.comLogradouro("Rua Sócrates").comNumero("853");
-
-		Pagador pagador = new Pagador().comNome("Breno Oliveira")
-				.comEmail("breno26@gmail.com").comIdentidade("222.222.222-22")
-				.comTelefoneCelular("(61)9999-9999")
-				.comEnderecoCobranca(enderecoCobranca);
-
-		InstrucaoUnica instrucaoUnica = new InstrucaoUnica()
-				.comRazao("qualquer").comIdProprio("6546454")
-				.comPagador(pagador).comPagamentoDireto(pagamentoDireto)
-				.comBoleto(boleto).comValores(valores);
-
-		XStream xStream = new XStream(new DomDriver());
-		xStream.processAnnotations(InstrucaoUnica.class);
-
-		System.out.println(xStream.toXML(instrucaoUnica));
-
-		// String xml =
-		// "<InstrucaoUnica> <Razao>qualquer</Razao>  <IdProprio>6546454</IdProprio>  <Pagador>    <Nome>Breno Oliveira</Nome>    <Email>breno26@gmail.com</Email>  </Pagador></InstrucaoUnica>";
-		//
-		// InstrucaoUnica iu = (InstrucaoUnica) xStream.fromXML(xml,
-		// InstrucaoUnica.class);
-		// System.out.println(iu.getPagador());
+		SendToMoip sendToMoip = new SandboxMoip("1L0UKNMHBPD9PDBY2DLRZYQBID1L3D7I",
+				"Z35XRKKSXHYZWAHJW5W9DEYEOPZ39NUODRUKBJKO");
+		sendToMoip.send(enviarInstrucao);
 	}
 }

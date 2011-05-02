@@ -11,6 +11,10 @@ public class Valores {
 	@XStreamAsAttribute
 	private String moeda = "BRL";
 
+	public static Valores valores() {
+		return new Valores();
+	}
+
 	public Valores comValor(final String valor) {
 		this.valor = valor;
 		return this;

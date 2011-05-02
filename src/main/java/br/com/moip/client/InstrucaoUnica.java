@@ -6,20 +6,32 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 public class InstrucaoUnica {
 
 	@XStreamAlias("Razao")
-	private String Razao;
+	private String razao;
 
+	@XStreamAlias("IdProprio")
 	private String IdProprio;
 
-	private Pagador Pagador;
+	@XStreamAlias("Pagador")
+	private Pagador pagador;
 
-	private PagamentoDireto PagamentoDireto;
+	@XStreamAlias("PagamentoDireto")
+	private PagamentoDireto pagamentoDireto;
 
-	private Boleto Boleto;
+	@XStreamAlias("Boleto")
+	private Boleto boleto;
 
-	private Valores Valores;
+	@XStreamAlias("Valores")
+	private Valores valores;
+
+	@XStreamAlias("CartaoCredito")
+	private CartaoCredito cartaoCredito;
+
+	public static InstrucaoUnica instrucaoUnica() {
+		return new InstrucaoUnica();
+	}
 
 	public InstrucaoUnica comRazao(final String razao) {
-		this.Razao = razao;
+		this.razao = razao;
 		return this;
 	}
 
@@ -28,29 +40,68 @@ public class InstrucaoUnica {
 		return this;
 	}
 
-	public InstrucaoUnica comPagamentoDireto(
-			final PagamentoDireto pagamentoDireto) {
-		this.PagamentoDireto = pagamentoDireto;
+	public InstrucaoUnica com(final PagamentoDireto pagamentoDireto) {
+		this.pagamentoDireto = pagamentoDireto;
 		return this;
 	}
 
-	public InstrucaoUnica comPagador(final Pagador pagador) {
-		this.Pagador = pagador;
+	public InstrucaoUnica com(final Pagador pagador) {
+		this.pagador = pagador;
 		return this;
 	}
 
-	public InstrucaoUnica comBoleto(final Boleto boleto) {
-		this.Boleto = boleto;
+	public InstrucaoUnica com(final Boleto boleto) {
+		this.boleto = boleto;
 		return this;
 	}
 
-	public InstrucaoUnica comValores(final Valores valores) {
-		this.Valores = valores;
+	public InstrucaoUnica com(final Valores valores) {
+		this.valores = valores;
 		return this;
+	}
+
+	public CartaoCredito cartaoCredito() {
+		if (cartaoCredito == null) {
+			cartaoCredito = new CartaoCredito();
+		}
+		return cartaoCredito;
+	}
+
+	public InstrucaoUnica com(final CartaoCredito cartaoCredito) {
+		this.cartaoCredito = cartaoCredito;
+		return this;
+	}
+
+	public Pagador pagador() {
+		if (pagador == null) {
+			pagador = new Pagador();
+		}
+		return pagador;
+	}
+
+	public PagamentoDireto pagamentoDireto() {
+		if (pagamentoDireto == null) {
+			pagamentoDireto = new PagamentoDireto();
+		}
+		return pagamentoDireto;
+	}
+
+	public Boleto boleto() {
+		if (boleto == null) {
+			boleto = new Boleto();
+		}
+		return boleto;
+	}
+
+	public Valores valores() {
+		if (valores == null) {
+			valores = new Valores();
+		}
+		return valores;
 	}
 
 	public String getRazao() {
-		return Razao;
+		return razao;
 	}
 
 	public String getIdProprio() {
@@ -58,11 +109,11 @@ public class InstrucaoUnica {
 	}
 
 	public Pagador getPagador() {
-		return Pagador;
+		return pagador;
 	}
 
 	public void setRazao(final String razao) {
-		Razao = razao;
+		this.razao = razao;
 	}
 
 	public void setIdProprio(final String idProprio) {
@@ -70,7 +121,7 @@ public class InstrucaoUnica {
 	}
 
 	public void setPagador(final Pagador pagador) {
-		Pagador = pagador;
+		this.pagador = pagador;
 	}
 
 }

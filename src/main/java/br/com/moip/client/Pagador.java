@@ -25,6 +25,10 @@ public class Pagador {
 	@XStreamAlias("EnderecoCobranca")
 	private EnderecoCobranca enderecoCobranca;
 
+	public static Pagador pagador() {
+		return new Pagador();
+	}
+
 	public Pagador comNome(final String nome) {
 		this.nome = nome;
 		return this;

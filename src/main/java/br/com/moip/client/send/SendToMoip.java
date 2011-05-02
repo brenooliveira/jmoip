@@ -5,7 +5,7 @@ import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.methods.RequestEntity;
 import org.apache.commons.httpclient.methods.StringRequestEntity;
 
-import br.com.moip.client.InstrucaoUnica;
+import br.com.moip.client.EnviarInstrucao;
 import br.com.moip.client.exception.MoipClientException;
 
 import com.thoughtworks.xstream.XStream;
@@ -21,13 +21,11 @@ public abstract class SendToMoip {
 		this.key = key;
 	}
 
-	public void send(final InstrucaoUnica instrucaoUnica) {
+	public void send(final EnviarInstrucao enviarInstrucao) {
 		HttpClient client = new HttpClient();
 
 		PostMethod post = new PostMethod(getEnviroment());
 
-		String token = "COLOQUE AQUI SUA CHAVE DE IDENTIFICACAO";
-		String key = "COLOQUE AQUI SUA CHAVE DE PERMISSAO";
 		String authHeader = token + ":" + key;
 		String encoded = "Basic MUwwVUtOTUhCUEQ5UERCWTJETFJaWVFCSUQxTDNEN0k6WjM1WFJLS1NYSFlaV0FISlc1VzlERVlFT1BaMzlOVU9EUlVLQkpLTw==";
 
@@ -35,8 +33,10 @@ public abstract class SendToMoip {
 		post.setDoAuthentication(true);
 
 		XStream xstream = new XStream();
-		xstream.processAnnotations(InstrucaoUnica.class);
-		String body = xstream.toXML(instrucaoUnica);
+		xstream.processAnnotations(EnviarInstrucao.class);
+		String body = xstream.toXML(enviarInstrucao);
+
+		System.out.println(body);
 
 		try {
 
@@ -46,8 +46,7 @@ public abstract class SendToMoip {
 
 			int status = client.executeMethod(post);
 
-			// System.out.println(status + "\n" +
-			// post.getResponseBodyAsString());
+			System.out.println(status + "\n" + post.getResponseBodyAsString());
 		} catch (Exception e) {
 
 			throw new MoipClientException(e);

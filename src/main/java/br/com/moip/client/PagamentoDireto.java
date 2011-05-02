@@ -6,6 +6,10 @@ public class PagamentoDireto {
 
 	private String Instituicao;
 
+	public static PagamentoDireto pagamentoDireto() {
+		return new PagamentoDireto();
+	}
+
 	public PagamentoDireto comForma(final String forma) {
 		this.Forma = forma;
 		return this;

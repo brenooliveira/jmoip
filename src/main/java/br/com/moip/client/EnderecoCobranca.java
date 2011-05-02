@@ -1,96 +1,82 @@
 package br.com.moip.client;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
 public class EnderecoCobranca {
-	private String Logradouro;
-	private String Numero;
-	private String Complemento;
-	private String Bairro;
-	private String Cidade;
-	private String Estado;
-	private String Pais;
-	private String CEP;
-	private String TelefoneFixo;
+
+	@XStreamAlias("Logradouro")
+	private String logradouro;
+
+	@XStreamAlias("Numero")
+	private String numero;
+
+	@XStreamAlias("Complemento")
+	private String complemento;
+
+	@XStreamAlias("Bairro")
+	private String bairro;
+
+	@XStreamAlias("Cidade")
+	private String cidade;
+
+	@XStreamAlias("Estado")
+	private String estado;
+
+	@XStreamAlias("Pais")
+	private String pais;
+
+	@XStreamAlias("CEP")
+	private String cep;
+
+	@XStreamAlias("TelefoneFixo")
+	private String telefoneFixo;
+
+	public static EnderecoCobranca enderecoCobranca() {
+		return new EnderecoCobranca();
+	}
 
 	public EnderecoCobranca comLogradouro(final String logradouro) {
-		this.Logradouro = logradouro;
+		this.logradouro = logradouro;
 		return this;
 	}
 
 	public EnderecoCobranca comNumero(final String numero) {
-		this.Numero = numero;
+		this.numero = numero;
 		return this;
 	}
 
-	public String getLogradouro() {
-		return Logradouro;
+	public EnderecoCobranca comComplemento(final String complemento) {
+		this.complemento = complemento;
+		return this;
 	}
 
-	public void setLogradouro(final String logradouro) {
-		Logradouro = logradouro;
+	public EnderecoCobranca comBairro(final String bairro) {
+		this.bairro = bairro;
+		return this;
 	}
 
-	public String getNumero() {
-		return Numero;
+	public EnderecoCobranca comCidade(final String cidade) {
+		this.cidade = cidade;
+		return this;
 	}
 
-	public void setNumero(final String numero) {
-		Numero = numero;
+	public EnderecoCobranca comEstado(final String estado) {
+		this.estado = estado;
+		return this;
 	}
 
-	public String getComplemento() {
-		return Complemento;
+	public EnderecoCobranca comPais(final String pais) {
+		this.pais = pais;
+		return this;
 	}
 
-	public void setComplemento(final String complemento) {
-		Complemento = complemento;
+	public EnderecoCobranca comCep(final String cep) {
+		this.cep = cep;
+		return this;
 	}
 
-	public String getBairro() {
-		return Bairro;
+	public EnderecoCobranca comTelefoneFixo(final String telefoneFixo) {
+		this.telefoneFixo = telefoneFixo;
+		return this;
 	}
-
-	public void setBairro(final String bairro) {
-		Bairro = bairro;
-	}
-
-	public String getCidade() {
-		return Cidade;
-	}
-
-	public void setCidade(final String cidade) {
-		Cidade = cidade;
-	}
-
-	public String getEstado() {
-		return Estado;
-	}
-
-	public void setEstado(final String estado) {
-		Estado = estado;
-	}
-
-	public String getPais() {
-		return Pais;
-	}
-
-	public void setPais(final String pais) {
-		Pais = pais;
-	}
-
-	public String getCEP() {
-		return CEP;
-	}
-
-	public void setCEP(final String cEP) {
-		CEP = cEP;
-	}
-
-	public String getTelefoneFixo() {
-		return TelefoneFixo;
-	}
-
-	public void setTelefoneFixo(final String telefoneFixo) {
-		TelefoneFixo = telefoneFixo;
-	}
-
 }
