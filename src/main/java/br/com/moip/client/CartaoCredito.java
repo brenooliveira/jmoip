@@ -35,6 +35,11 @@ public class CartaoCredito {
 		return this;
 	}
 
+	public CartaoCredito comCodigoSeguranca(final String codigoSeguranca) {
+		this.codigoSeguranca = codigoSeguranca;
+		return this;
+	}
+
 	public Portador portador() {
 		if (this.portador == null) {
 			this.portador = new Portador();

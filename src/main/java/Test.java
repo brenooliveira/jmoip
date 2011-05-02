@@ -9,6 +9,7 @@ import static br.com.moip.client.Valores.valores;
 import java.util.UUID;
 
 import br.com.moip.client.EnviarInstrucao;
+import br.com.moip.client.response.EnviarInstrucaoUnicaResponse;
 import br.com.moip.client.send.SandboxMoip;
 import br.com.moip.client.send.SendToMoip;
 
@@ -27,10 +28,9 @@ public class Test {
 								.comTelefoneCelular("(61)9999-9999")
 								.comEnderecoCobranca(
 										enderecoCobranca()
-												.comLogradouro(
-														"Rua dos exemplos")
+												.comLogradouro("Rua Sócrates")
 												.comNumero("853")
-												.comBairro("Jardim")
+												.comBairro("Jardim Marajoara")
 												.comCep("04671-072")
 												.comCidade("São Paulo")
 												.comEstado("SP")
@@ -40,10 +40,16 @@ public class Test {
 						.com(pagamentoDireto().comForma("BoletoBancario"))
 						.com(boleto().comDiasParaExpiracao("5"))
 						.com(valores().comValor("15.00"))
-						.com(cartaoCredito().comNumero("324165156465546546")
+						.com(cartaoCredito().comNumero("4551870000000183")
 								.comExpiracao("12/12")));
 
-		SendToMoip sendToMoip = new SandboxMoip("SEU_TOKEN", "SUA_KEY");
-		sendToMoip.send(enviarInstrucao);
+		SendToMoip sendToMoip = new SandboxMoip(
+				"1L0UKNMHBPD9PDBY2DLRZYQBID1L3D7I",
+				"Z35XRKKSXHYZWAHJW5W9DEYEOPZ39NUODRUKBJKO");
+		EnviarInstrucaoUnicaResponse response = sendToMoip
+				.send(enviarInstrucao);
+
+		System.out.println(response);
+
 	}
 }

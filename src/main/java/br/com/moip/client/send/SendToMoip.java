@@ -7,6 +7,7 @@ import org.apache.commons.httpclient.methods.StringRequestEntity;
 
 import br.com.moip.client.EnviarInstrucao;
 import br.com.moip.client.exception.MoipClientException;
+import br.com.moip.client.response.EnviarInstrucaoUnicaResponse;
 
 import com.thoughtworks.xstream.XStream;
 
@@ -21,7 +22,8 @@ public abstract class SendToMoip {
 		this.key = key;
 	}
 
-	public void send(final EnviarInstrucao enviarInstrucao) {
+	public EnviarInstrucaoUnicaResponse send(
+			final EnviarInstrucao enviarInstrucao) {
 		HttpClient client = new HttpClient();
 
 		PostMethod post = new PostMethod(getEnviroment());
@@ -46,7 +48,10 @@ public abstract class SendToMoip {
 
 			int status = client.executeMethod(post);
 
-			System.out.println(status + "\n" + post.getResponseBodyAsString());
+			xstream.processAnnotations(EnviarInstrucaoUnicaResponse.class);
+
+			return (EnviarInstrucaoUnicaResponse) xstream.fromXML(post
+					.getResponseBodyAsString());
 		} catch (Exception e) {
 
 			throw new MoipClientException(e);
