@@ -42,8 +42,7 @@ public class Test {
 						.com(cartaoCredito().comNumero("324165156465546546")
 								.comExpiracao("12/12")));
 
-		SendToMoip sendToMoip = new SandboxMoip("1L0UKNMHBPD9PDBY2DLRZYQBID1L3D7I",
-				"Z35XRKKSXHYZWAHJW5W9DEYEOPZ39NUODRUKBJKO");
+		SendToMoip sendToMoip = new SandboxMoip("SEU_TOKEN", "SUA_KEY");
 		sendToMoip.send(enviarInstrucao);
 	}
 }
