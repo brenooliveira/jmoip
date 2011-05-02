@@ -28,11 +28,11 @@ public class Test {
 								.comTelefoneCelular("(61)9999-9999")
 								.comEnderecoCobranca(
 										enderecoCobranca()
-												.comLogradouro("Rua Sócrates")
+												.comLogradouro("Rua Vergueiro")
 												.comNumero("853")
-												.comBairro("Jardim Marajoara")
-												.comCep("04671-072")
-												.comCidade("São Paulo")
+												.comBairro("Vila Mariano")
+												.comCep("04600-021")
+												.comCidade("Sao Paulo")
 												.comEstado("SP")
 												.comPais("BRA")
 												.comTelefoneFixo(
@@ -43,9 +43,7 @@ public class Test {
 						.com(cartaoCredito().comNumero("4551870000000183")
 								.comExpiracao("12/12")));
 
-		SendToMoip sendToMoip = new SandboxMoip(
-				"1L0UKNMHBPD9PDBY2DLRZYQBID1L3D7I",
-				"Z35XRKKSXHYZWAHJW5W9DEYEOPZ39NUODRUKBJKO");
+		SendToMoip sendToMoip = new SandboxMoip("SEU_TOKEN", "SUA_KEY");
 		EnviarInstrucaoUnicaResponse response = sendToMoip
 				.send(enviarInstrucao);
 
