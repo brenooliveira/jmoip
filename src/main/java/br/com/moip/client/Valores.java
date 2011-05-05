@@ -25,4 +25,20 @@ public class Valores {
 		return this;
 	}
 
+	public String getValor() {
+		return valor;
+	}
+
+	public void setValor(final String valor) {
+		this.valor = valor;
+	}
+
+	public String getMoeda() {
+		return moeda;
+	}
+
+	public void setMoeda(final String moeda) {
+		this.moeda = moeda;
+	}
+
 }

@@ -20,4 +20,20 @@ public class PagamentoDireto {
 		return this;
 	}
 
+	public String getForma() {
+		return Forma;
+	}
+
+	public void setForma(final String forma) {
+		Forma = forma;
+	}
+
+	public String getInstituicao() {
+		return Instituicao;
+	}
+
+	public void setInstituicao(final String instituicao) {
+		Instituicao = instituicao;
+	}
+
 }

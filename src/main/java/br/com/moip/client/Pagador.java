@@ -58,4 +58,60 @@ public class Pagador {
 		this.enderecoCobranca = enderecoCobranca;
 		return this;
 	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(final String nome) {
+		this.nome = nome;
+	}
+
+	public String getLoginMoIP() {
+		return loginMoIP;
+	}
+
+	public void setLoginMoIP(final String loginMoIP) {
+		this.loginMoIP = loginMoIP;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(final String email) {
+		this.email = email;
+	}
+
+	public String getTelefoneCelular() {
+		return telefoneCelular;
+	}
+
+	public void setTelefoneCelular(final String telefoneCelular) {
+		this.telefoneCelular = telefoneCelular;
+	}
+
+	public String getApelido() {
+		return apelido;
+	}
+
+	public void setApelido(final String apelido) {
+		this.apelido = apelido;
+	}
+
+	public String getIdentidade() {
+		return identidade;
+	}
+
+	public void setIdentidade(final String identidade) {
+		this.identidade = identidade;
+	}
+
+	public EnderecoCobranca getEnderecoCobranca() {
+		return enderecoCobranca;
+	}
+
+	public void setEnderecoCobranca(final EnderecoCobranca enderecoCobranca) {
+		this.enderecoCobranca = enderecoCobranca;
+	}
 }

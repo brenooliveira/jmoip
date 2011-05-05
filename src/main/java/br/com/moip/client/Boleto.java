@@ -36,4 +36,45 @@ public class Boleto {
 		this.URLLogo = URLLogo;
 		return this;
 	}
+
+	public String getDiasExpiracao() {
+		return DiasExpiracao;
+	}
+
+	public void setDiasExpiracao(final String diasExpiracao) {
+		DiasExpiracao = diasExpiracao;
+	}
+
+	public String getInstrucao1() {
+		return Instrucao1;
+	}
+
+	public void setInstrucao1(final String instrucao1) {
+		Instrucao1 = instrucao1;
+	}
+
+	public String getInstrucao2() {
+		return Instrucao2;
+	}
+
+	public void setInstrucao2(final String instrucao2) {
+		Instrucao2 = instrucao2;
+	}
+
+	public String getInstrucao3() {
+		return Instrucao3;
+	}
+
+	public void setInstrucao3(final String instrucao3) {
+		Instrucao3 = instrucao3;
+	}
+
+	public String getURLLogo() {
+		return URLLogo;
+	}
+
+	public void setURLLogo(final String uRLLogo) {
+		URLLogo = uRLLogo;
+	}
+
 }

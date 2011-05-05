@@ -47,4 +47,36 @@ public class CartaoCredito {
 		return this.portador;
 	}
 
+	public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(final String numero) {
+		this.numero = numero;
+	}
+
+	public String getExpiracao() {
+		return expiracao;
+	}
+
+	public void setExpiracao(final String expiracao) {
+		this.expiracao = expiracao;
+	}
+
+	public String getCodigoSeguranca() {
+		return codigoSeguranca;
+	}
+
+	public void setCodigoSeguranca(final String codigoSeguranca) {
+		this.codigoSeguranca = codigoSeguranca;
+	}
+
+	public Portador getPortador() {
+		return portador;
+	}
+
+	public void setPortador(final Portador portador) {
+		this.portador = portador;
+	}
+
 }

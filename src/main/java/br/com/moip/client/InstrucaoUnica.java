@@ -124,4 +124,36 @@ public class InstrucaoUnica {
 		this.pagador = pagador;
 	}
 
+	public PagamentoDireto getPagamentoDireto() {
+		return pagamentoDireto;
+	}
+
+	public void setPagamentoDireto(final PagamentoDireto pagamentoDireto) {
+		this.pagamentoDireto = pagamentoDireto;
+	}
+
+	public Boleto getBoleto() {
+		return boleto;
+	}
+
+	public void setBoleto(final Boleto boleto) {
+		this.boleto = boleto;
+	}
+
+	public Valores getValores() {
+		return valores;
+	}
+
+	public void setValores(final Valores valores) {
+		this.valores = valores;
+	}
+
+	public CartaoCredito getCartaoCredito() {
+		return cartaoCredito;
+	}
+
+	public void setCartaoCredito(final CartaoCredito cartaoCredito) {
+		this.cartaoCredito = cartaoCredito;
+	}
+
 }

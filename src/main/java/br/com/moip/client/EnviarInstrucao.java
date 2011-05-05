@@ -19,4 +19,12 @@ public class EnviarInstrucao {
 		this.instrucaoUnica = instrucaoUnica;
 		return this;
 	}
+
+	public InstrucaoUnica getInstrucaoUnica() {
+		return instrucaoUnica;
+	}
+
+	public void setInstrucaoUnica(final InstrucaoUnica instrucaoUnica) {
+		this.instrucaoUnica = instrucaoUnica;
+	}
 }
