@@ -2,6 +2,9 @@ package br.com.moip.client.send;
 
 public class ProductionMoip extends SendToMoip {
 
+	public ProductionMoip() {
+	}
+
 	public ProductionMoip(final String token, final String key) {
 		super(token, key);
 	}

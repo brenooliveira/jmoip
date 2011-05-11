@@ -1,5 +1,6 @@
 package br.com.moip.client.send;
 
+import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.methods.RequestEntity;
@@ -17,6 +18,9 @@ public abstract class SendToMoip {
 
 	private String key;
 
+	public SendToMoip() {
+	}
+
 	public SendToMoip(final String token, final String key) {
 		this.token = token;
 		this.key = key;
@@ -29,7 +33,8 @@ public abstract class SendToMoip {
 		PostMethod post = new PostMethod(getEnviroment());
 
 		String authHeader = token + ":" + key;
-		String encoded = "Basic MUwwVUtOTUhCUEQ5UERCWTJETFJaWVFCSUQxTDNEN0k6WjM1WFJLS1NYSFlaV0FISlc1VzlERVlFT1BaMzlOVU9EUlVLQkpLTw==";
+		String hash = Base64.encodeBase64(authHeader.getBytes()).toString();
+		String encoded = "Basic " + hash;
 
 		post.setRequestHeader("Authorization", encoded);
 		post.setDoAuthentication(true);
@@ -46,7 +51,7 @@ public abstract class SendToMoip {
 					"application/x-www-formurlencoded", "UTF-8");
 			post.setRequestEntity(requestEntity);
 
-			int status = client.executeMethod(post);
+			client.executeMethod(post);
 
 			xstream.processAnnotations(EnviarInstrucaoUnicaResponse.class);
 
@@ -62,4 +67,23 @@ public abstract class SendToMoip {
 	}
 
 	public abstract String getEnviroment();
+
+	public SendToMoip comToken(final String token) {
+		this.token = token;
+		return this;
+	}
+
+	public SendToMoip comKey(final String key) {
+		this.key = key;
+		return this;
+	}
+
+	public void setToken(final String token) {
+		this.token = token;
+	}
+
+	public void setKey(final String key) {
+		this.key = key;
+	}
+
 }

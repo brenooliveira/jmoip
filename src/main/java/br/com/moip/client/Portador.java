@@ -45,4 +45,45 @@ public class Portador {
 		this.dataNascimento = dataNascimento;
 		return this;
 	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(final String nome) {
+		this.nome = nome;
+	}
+
+	public String getIdentidade() {
+		return identidade;
+	}
+
+	public void setIdentidade(final String identidade) {
+		this.identidade = identidade;
+	}
+
+	public String getTipoDocumento() {
+		return tipoDocumento;
+	}
+
+	public void setTipoDocumento(final String tipoDocumento) {
+		this.tipoDocumento = tipoDocumento;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(final String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(final String dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
 }
