@@ -18,6 +18,8 @@ public abstract class SendToMoip {
 
 	private String key;
 
+	private String hash;
+
 	public SendToMoip() {
 	}
 
@@ -33,7 +35,10 @@ public abstract class SendToMoip {
 		PostMethod post = new PostMethod(getEnviroment());
 
 		String authHeader = token + ":" + key;
-		String hash = Base64.encodeBase64(authHeader.getBytes()).toString();
+		String hash = this.hash;
+		if (hasHash()) {
+			hash = Base64.encodeBase64(authHeader.getBytes()).toString();
+		}
 		String encoded = "Basic " + hash;
 
 		post.setRequestHeader("Authorization", encoded);
@@ -68,6 +73,10 @@ public abstract class SendToMoip {
 
 	public abstract String getEnviroment();
 
+	private boolean hasHash() {
+		return hash == null || "".equals(hash);
+	}
+
 	public SendToMoip comToken(final String token) {
 		this.token = token;
 		return this;
@@ -78,12 +87,21 @@ public abstract class SendToMoip {
 		return this;
 	}
 
+	public SendToMoip comHash(final String hash) {
+		this.hash = hash;
+		return this;
+	}
+
 	public void setToken(final String token) {
 		this.token = token;
 	}
 
 	public void setKey(final String key) {
 		this.key = key;
+	}
+
+	public void setHash(final String hash) {
+		this.hash = hash;
 	}
 
 }
