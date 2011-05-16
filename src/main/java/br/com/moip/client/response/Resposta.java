@@ -13,6 +13,9 @@ public class Resposta {
 	@XStreamAlias("Token")
 	private String token;
 
+	@XStreamAlias("RespostaPagamentoDireto")
+	private RespostaPagamentoDireto respostaPagamentoDireto;
+
 	public String getId() {
 		return id;
 	}
@@ -23,6 +26,10 @@ public class Resposta {
 
 	public String getToken() {
 		return token;
+	}
+
+	public RespostaPagamentoDireto getRespostaPagamentoDireto() {
+		return respostaPagamentoDireto;
 	}
 
 	@Override
