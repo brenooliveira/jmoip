@@ -13,6 +13,9 @@ public class Resposta {
 	@XStreamAlias("Token")
 	private String token;
 
+	@XStreamAlias("Erro")
+	private String erro;
+
 	@XStreamAlias("RespostaPagamentoDireto")
 	private RespostaPagamentoDireto respostaPagamentoDireto;
 
@@ -32,10 +35,14 @@ public class Resposta {
 		return respostaPagamentoDireto;
 	}
 
+	public String getErro() {
+		return erro;
+	}
+
 	@Override
 	public String toString() {
 		return "Resposta [id=" + id + ", status=" + status + ", token=" + token
-				+ "]";
+				+ ", erro=" + erro + "]";
 	}
 
 }
