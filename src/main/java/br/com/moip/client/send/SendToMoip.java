@@ -56,7 +56,8 @@ public abstract class SendToMoip {
 					"application/x-www-formurlencoded", "UTF-8");
 			post.setRequestEntity(requestEntity);
 
-			client.executeMethod(post);
+			int status = client.executeMethod(post);
+			System.out.println(status);
 
 			xstream.processAnnotations(EnviarInstrucaoUnicaResponse.class);
 

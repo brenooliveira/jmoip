@@ -21,6 +21,10 @@ public class Portador {
 	@XStreamAlias("DataNascimento")
 	private String dataNascimento;
 
+	public static Portador portador() {
+		return new Portador();
+	}
+
 	public Portador comNome(final String nome) {
 		this.nome = nome;
 		return this;
