@@ -23,9 +23,6 @@ public class InstrucaoUnica {
 	@XStreamAlias("Valores")
 	private Valores valores;
 
-	@XStreamAlias("CartaoCredito")
-	private CartaoCredito cartaoCredito;
-
 	public static InstrucaoUnica instrucaoUnica() {
 		return new InstrucaoUnica();
 	}
@@ -57,18 +54,6 @@ public class InstrucaoUnica {
 
 	public InstrucaoUnica com(final Valores valores) {
 		this.valores = valores;
-		return this;
-	}
-
-	public CartaoCredito cartaoCredito() {
-		if (cartaoCredito == null) {
-			cartaoCredito = new CartaoCredito();
-		}
-		return cartaoCredito;
-	}
-
-	public InstrucaoUnica com(final CartaoCredito cartaoCredito) {
-		this.cartaoCredito = cartaoCredito;
 		return this;
 	}
 
@@ -146,14 +131,6 @@ public class InstrucaoUnica {
 
 	public void setValores(final Valores valores) {
 		this.valores = valores;
-	}
-
-	public CartaoCredito getCartaoCredito() {
-		return cartaoCredito;
-	}
-
-	public void setCartaoCredito(final CartaoCredito cartaoCredito) {
-		this.cartaoCredito = cartaoCredito;
 	}
 
 }
