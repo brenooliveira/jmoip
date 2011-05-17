@@ -22,6 +22,9 @@ public class RespostaPagamentoDireto {
 	@XStreamAlias("CodigoRetorno")
 	private String codigoRetorno;
 
+	@XStreamAlias("CodigoAutorizacao")
+	private String codigoAutorizacao;
+
 	public String getTotalPago() {
 		return totalPago;
 	}
@@ -68,6 +71,14 @@ public class RespostaPagamentoDireto {
 
 	public void setCodigoRetorno(final String codigoRetorno) {
 		this.codigoRetorno = codigoRetorno;
+	}
+
+	public String getCodigoAutorizacao() {
+		return codigoAutorizacao;
+	}
+
+	public void setCodigoAutorizacao(final String codigoAutorizacao) {
+		this.codigoAutorizacao = codigoAutorizacao;
 	}
 
 	@Override
