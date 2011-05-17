@@ -13,6 +13,9 @@ public class PagamentoDireto {
 	@XStreamAlias("CartaoCredito")
 	private CartaoCredito cartaoCredito;
 
+	@XStreamAlias("Parcelamento")
+	private Parcelamento parcelamento;
+
 	public static PagamentoDireto pagamentoDireto() {
 		return new PagamentoDireto();
 	}
@@ -29,6 +32,11 @@ public class PagamentoDireto {
 
 	public PagamentoDireto comCartaoCredito(final CartaoCredito cartaoCredito) {
 		this.cartaoCredito = cartaoCredito;
+		return this;
+	}
+
+	public PagamentoDireto comParcelamento(final Parcelamento parcelamento) {
+		this.parcelamento = parcelamento;
 		return this;
 	}
 
@@ -54,6 +62,14 @@ public class PagamentoDireto {
 
 	public void setCartaoCredito(final CartaoCredito cartaoCredito) {
 		this.cartaoCredito = cartaoCredito;
+	}
+
+	public Parcelamento getParcelamento() {
+		return parcelamento;
+	}
+
+	public void setParcelamento(final Parcelamento parcelamento) {
+		this.parcelamento = parcelamento;
 	}
 
 }
