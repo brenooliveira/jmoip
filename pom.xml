@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.moip.client</groupId>
 	<artifactId>jmoip</artifactId>
-	<version>1.0.6</version>
+	<version>1.0.7</version>
 	<name>JMoip - Java Client for integration with MoIP</name>
 
 	<dependencies>

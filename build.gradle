@@ -4,7 +4,7 @@ apply plugin: 'war'
 apply plugin: 'jetty'
 
 sourceCompatibility = 1.5
-version = '1.0.6'
+version = '1.0.7'
 jar {
     manifest {
         attributes 'Implementation-Title': 'JMoip - Java Client for integration with MoIP', 'Implementation-Version': version
