@@ -29,6 +29,9 @@ public class InstrucaoUnica {
 	@XStreamAlias("URLRetorno")
 	private String urlRetorno;
 
+	@XStreamAlias("Mensagens")
+	private Mensagens mensagens;
+
 	public static InstrucaoUnica instrucaoUnica() {
 		return new InstrucaoUnica();
 	}
@@ -60,6 +63,11 @@ public class InstrucaoUnica {
 
 	public InstrucaoUnica com(final Valores valores) {
 		this.valores = valores;
+		return this;
+	}
+
+	public InstrucaoUnica com(final Mensagens mensagens) {
+		this.mensagens = mensagens;
 		return this;
 	}
 
@@ -155,6 +163,22 @@ public class InstrucaoUnica {
 
 	public void setUrlNotificacao(final String urlNotificacao) {
 		this.urlNotificacao = urlNotificacao;
+	}
+
+	public String getUrlRetorno() {
+		return urlRetorno;
+	}
+
+	public void setUrlRetorno(final String urlRetorno) {
+		this.urlRetorno = urlRetorno;
+	}
+
+	public Mensagens getMensagens() {
+		return mensagens;
+	}
+
+	public void setMensagens(final Mensagens mensagens) {
+		this.mensagens = mensagens;
 	}
 
 }
