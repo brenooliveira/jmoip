@@ -23,6 +23,12 @@ public class InstrucaoUnica {
 	@XStreamAlias("Valores")
 	private Valores valores;
 
+	@XStreamAlias("URLNotificacao")
+	private String urlNotificacao;
+
+	@XStreamAlias("URLRetorno")
+	private String urlRetorno;
+
 	public static InstrucaoUnica instrucaoUnica() {
 		return new InstrucaoUnica();
 	}
@@ -85,6 +91,16 @@ public class InstrucaoUnica {
 		return valores;
 	}
 
+	public InstrucaoUnica comURLNotificacao(final String urlNotificacao) {
+		this.urlNotificacao = urlNotificacao;
+		return this;
+	}
+
+	public InstrucaoUnica comURLRetorno(final String urlRetorno) {
+		this.urlRetorno = urlRetorno;
+		return this;
+	}
+
 	public String getRazao() {
 		return razao;
 	}
@@ -131,6 +147,14 @@ public class InstrucaoUnica {
 
 	public void setValores(final Valores valores) {
 		this.valores = valores;
+	}
+
+	public String getUrlNotificacao() {
+		return urlNotificacao;
+	}
+
+	public void setUrlNotificacao(final String urlNotificacao) {
+		this.urlNotificacao = urlNotificacao;
 	}
 
 }
