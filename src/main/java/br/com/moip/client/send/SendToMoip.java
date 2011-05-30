@@ -48,8 +48,6 @@ public abstract class SendToMoip {
 		xstream.processAnnotations(EnviarInstrucao.class);
 		String body = xstream.toXML(enviarInstrucao);
 
-		System.out.println(body);
-
 		try {
 
 			RequestEntity requestEntity = new StringRequestEntity(body,
