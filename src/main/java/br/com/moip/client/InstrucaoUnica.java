@@ -32,6 +32,9 @@ public class InstrucaoUnica {
 	@XStreamAlias("Mensagens")
 	private Mensagens mensagens;
 
+	@XStreamAlias("Recebedor")
+	private Recebedor recebedor;
+
 	public static InstrucaoUnica instrucaoUnica() {
 		return new InstrucaoUnica();
 	}
@@ -71,6 +74,11 @@ public class InstrucaoUnica {
 		return this;
 	}
 
+	public InstrucaoUnica com(final Recebedor recebedor) {
+		this.recebedor = recebedor;
+		return this;
+	}
+
 	public Pagador pagador() {
 		if (pagador == null) {
 			pagador = new Pagador();
@@ -97,6 +105,13 @@ public class InstrucaoUnica {
 			valores = new Valores();
 		}
 		return valores;
+	}
+
+	public Recebedor recebedor() {
+		if (recebedor == null) {
+			recebedor = new Recebedor();
+		}
+		return recebedor;
 	}
 
 	public InstrucaoUnica comURLNotificacao(final String urlNotificacao) {
@@ -179,6 +194,14 @@ public class InstrucaoUnica {
 
 	public void setMensagens(final Mensagens mensagens) {
 		this.mensagens = mensagens;
+	}
+
+	public Recebedor getRecebedor() {
+		return recebedor;
+	}
+
+	public void setRecebedor(final Recebedor recebedor) {
+		this.recebedor = recebedor;
 	}
 
 }

@@ -5,6 +5,7 @@ import static br.com.moip.client.InstrucaoUnica.instrucaoUnica;
 import static br.com.moip.client.Pagador.pagador;
 import static br.com.moip.client.PagamentoDireto.pagamentoDireto;
 import static br.com.moip.client.Portador.portador;
+import static br.com.moip.client.Recebedor.recebedor;
 import static br.com.moip.client.Valores.valores;
 import br.com.moip.client.EnviarInstrucao;
 import br.com.moip.client.response.EnviarInstrucaoUnicaResponse;
@@ -52,7 +53,8 @@ public class Test {
 																.comTipoDocumento(
 																		"cpf"))))
 						.com(boleto().comDiasParaExpiracao("5"))
-						.com(valores().comValor("15.00")));
+						.com(valores().comValor("15.00"))
+						.com(recebedor().comLoginMoip("teste")));
 
 		EnviarInstrucaoUnicaResponse response = new SandboxMoip().comHash(
 				"SEU_HASH").send(enviarInstrucao);
