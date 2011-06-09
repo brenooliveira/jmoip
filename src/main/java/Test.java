@@ -29,7 +29,7 @@ public class Test {
 												.comNumero("853")
 												.comBairro("Vila Mariano")
 												.comCep("04600-021")
-												.comCidade("São Paulo")
+												.comCidade("Sao Paulo")
 												.comEstado("SP")
 												.comPais("BRA")
 												.comTelefoneFixo(
