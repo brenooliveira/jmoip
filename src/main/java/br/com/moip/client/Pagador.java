@@ -4,114 +4,131 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 public class Pagador {
 
-	@XStreamAlias("Nome")
-	private String nome;
+    @XStreamAlias("Nome")
+    private String nome;
 
-	@XStreamAlias("LoginMoIP")
-	private String loginMoIP;
+    @XStreamAlias("LoginMoIP")
+    private String loginMoIP;
 
-	@XStreamAlias("Email")
-	private String email;
+    @XStreamAlias("Email")
+    private String email;
 
-	@XStreamAlias("TelefoneCelular")
-	private String telefoneCelular;
+    @XStreamAlias("TelefoneCelular")
+    private String telefoneCelular;
 
-	@XStreamAlias("Apelido")
-	private String apelido;
+    @XStreamAlias("Apelido")
+    private String apelido;
 
-	@XStreamAlias("Identidade")
-	private String identidade;
+    @XStreamAlias("Identidade")
+    private String identidade;
 
-	@XStreamAlias("EnderecoCobranca")
-	private EnderecoCobranca enderecoCobranca;
+    @XStreamAlias("EnderecoCobranca")
+    private Endereco enderecoCobranca;
 
-	public static Pagador pagador() {
-		return new Pagador();
-	}
+    @XStreamAlias("EnderecoEntrega")
+    private Endereco enderecoEntrega;
 
-	public Pagador comNome(final String nome) {
-		this.nome = nome;
-		return this;
-	}
+    public static Pagador pagador() {
+        return new Pagador();
+    }
 
-	public Pagador comEmail(final String email) {
-		this.email = email;
-		return this;
-	}
+    public Pagador comNome(final String nome) {
+        this.nome = nome;
+        return this;
+    }
 
-	public Pagador comTelefoneCelular(final String telefoneCelular) {
-		this.telefoneCelular = telefoneCelular;
-		return this;
-	}
+    public Pagador comEmail(final String email) {
+        this.email = email;
+        return this;
+    }
 
-	public Pagador comApelido(final String apelido) {
-		this.apelido = apelido;
-		return this;
-	}
+    public Pagador comTelefoneCelular(final String telefoneCelular) {
+        this.telefoneCelular = telefoneCelular;
+        return this;
+    }
 
-	public Pagador comIdentidade(final String identidade) {
-		this.identidade = identidade;
-		return this;
-	}
+    public Pagador comApelido(final String apelido) {
+        this.apelido = apelido;
+        return this;
+    }
 
-	public Pagador comEnderecoCobranca(final EnderecoCobranca enderecoCobranca) {
-		this.enderecoCobranca = enderecoCobranca;
-		return this;
-	}
+    public Pagador comIdentidade(final String identidade) {
+        this.identidade = identidade;
+        return this;
+    }
 
-	public String getNome() {
-		return nome;
-	}
+    public Pagador comEnderecoCobranca(final Endereco enderecoCobranca) {
+        this.enderecoCobranca = enderecoCobranca;
+        return this;
+    }
 
-	public void setNome(final String nome) {
-		this.nome = nome;
-	}
+    public Pagador comEnderecoEntrega(final Endereco enderecoEntrega) {
+        this.enderecoEntrega = enderecoEntrega;
+        return this;
+    }
 
-	public String getLoginMoIP() {
-		return loginMoIP;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public void setLoginMoIP(final String loginMoIP) {
-		this.loginMoIP = loginMoIP;
-	}
+    public void setNome(final String nome) {
+        this.nome = nome;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getLoginMoIP() {
+        return loginMoIP;
+    }
 
-	public void setEmail(final String email) {
-		this.email = email;
-	}
+    public void setLoginMoIP(final String loginMoIP) {
+        this.loginMoIP = loginMoIP;
+    }
 
-	public String getTelefoneCelular() {
-		return telefoneCelular;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setTelefoneCelular(final String telefoneCelular) {
-		this.telefoneCelular = telefoneCelular;
-	}
+    public void setEmail(final String email) {
+        this.email = email;
+    }
 
-	public String getApelido() {
-		return apelido;
-	}
+    public String getTelefoneCelular() {
+        return telefoneCelular;
+    }
 
-	public void setApelido(final String apelido) {
-		this.apelido = apelido;
-	}
+    public void setTelefoneCelular(final String telefoneCelular) {
+        this.telefoneCelular = telefoneCelular;
+    }
 
-	public String getIdentidade() {
-		return identidade;
-	}
+    public String getApelido() {
+        return apelido;
+    }
 
-	public void setIdentidade(final String identidade) {
-		this.identidade = identidade;
-	}
+    public void setApelido(final String apelido) {
+        this.apelido = apelido;
+    }
 
-	public EnderecoCobranca getEnderecoCobranca() {
-		return enderecoCobranca;
-	}
+    public String getIdentidade() {
+        return identidade;
+    }
 
-	public void setEnderecoCobranca(final EnderecoCobranca enderecoCobranca) {
-		this.enderecoCobranca = enderecoCobranca;
-	}
+    public void setIdentidade(final String identidade) {
+        this.identidade = identidade;
+    }
+
+    public Endereco getEnderecoCobranca() {
+        return enderecoCobranca;
+    }
+
+    public void setEnderecoCobranca(final Endereco enderecoCobranca) {
+        this.enderecoCobranca = enderecoCobranca;
+    }
+
+    public Endereco getEnderecoEntrega() {
+        return enderecoEntrega;
+    }
+
+    public void setEnderecoEntrega(final Endereco enderecoEntrega) {
+        this.enderecoEntrega = enderecoEntrega;
+    }
+
 }
