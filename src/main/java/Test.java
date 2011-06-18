@@ -1,6 +1,6 @@
 import static br.com.moip.client.Boleto.boleto;
 import static br.com.moip.client.CartaoCredito.cartaoCredito;
-import static br.com.moip.client.EnderecoCobranca.enderecoCobranca;
+import static br.com.moip.client.Endereco.enderecoCobranca;
 import static br.com.moip.client.InstrucaoUnica.instrucaoUnica;
 import static br.com.moip.client.Pagador.pagador;
 import static br.com.moip.client.PagamentoDireto.pagamentoDireto;
