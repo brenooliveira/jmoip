@@ -35,6 +35,9 @@ public class InstrucaoUnica {
 	@XStreamAlias("Recebedor")
 	private Recebedor recebedor;
 
+	@XStreamAlias("Comissoes")
+	private Comissoes comissoes;
+
 	public static InstrucaoUnica instrucaoUnica() {
 		return new InstrucaoUnica();
 	}
@@ -79,6 +82,11 @@ public class InstrucaoUnica {
 		return this;
 	}
 
+	public InstrucaoUnica com(Comissoes comissoes) {
+		this.comissoes = comissoes;
+		return this;
+	}
+	
 	public Pagador pagador() {
 		if (pagador == null) {
 			pagador = new Pagador();
@@ -202,6 +210,14 @@ public class InstrucaoUnica {
 
 	public void setRecebedor(final Recebedor recebedor) {
 		this.recebedor = recebedor;
+	}
+
+	public Comissoes getComissoes() {
+		return comissoes;
+	}
+
+	public void setComissoes(Comissoes comissoes) {
+		this.comissoes = comissoes;
 	}
 
 }

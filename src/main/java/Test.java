@@ -1,5 +1,8 @@
 import static br.com.moip.client.Boleto.boleto;
 import static br.com.moip.client.CartaoCredito.cartaoCredito;
+import static br.com.moip.client.Comissionado.comissionado;
+import static br.com.moip.client.Comissionamento.comissionamento;
+import static br.com.moip.client.Comissoes.comissoes;
 import static br.com.moip.client.Endereco.enderecoCobranca;
 import static br.com.moip.client.InstrucaoUnica.instrucaoUnica;
 import static br.com.moip.client.Pagador.pagador;
@@ -8,8 +11,6 @@ import static br.com.moip.client.Portador.portador;
 import static br.com.moip.client.Recebedor.recebedor;
 import static br.com.moip.client.Valores.valores;
 import br.com.moip.client.EnviarInstrucao;
-import br.com.moip.client.response.EnviarInstrucaoUnicaResponse;
-import br.com.moip.client.send.SandboxMoip;
 
 public class Test {
 
@@ -54,12 +55,21 @@ public class Test {
 																		"cpf"))))
 						.com(boleto().comDiasParaExpiracao("5"))
 						.com(valores().comValor("15.00"))
-						.com(recebedor().comLoginMoip("teste")));
+						.com(recebedor().comLoginMoip("teste"))
+						.com(comissoes().comComissionamento(
+								comissionamento()
+										.comComissionado(
+												comissionado().comissionado(
+														"likestore"))
+										.comValorPercentual("2")
+										.comRazao("Percentual LikeStore"))));
 
-		EnviarInstrucaoUnicaResponse response = new SandboxMoip().comHash(
-				"SEU_HASH").send(enviarInstrucao);
+		System.out.println(enviarInstrucao);
 
-		System.out.println(response);
+		// EnviarInstrucaoUnicaResponse response = new SandboxMoip().comHash(
+		// "SEU_HASH").send(enviarInstrucao);
+		//
+		// System.out.println(response);
 
 	}
 }
